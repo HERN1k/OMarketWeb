@@ -1,0 +1,202 @@
+.container {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 3rem);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 92.5vw;
+    background-color: var(--neutral-300-color);
+}
+
+.title {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--neutral-900-color);
+    letter-spacing: 2px;
+}
+
+.inputContainer {
+	position:relative;
+	margin-bottom:1rem;
+}
+
+.inputContainer label{
+	position:absolute;
+	top: 0.25rem;
+	left: 0;
+	font-size: 1.35rem;
+	color: var(--neutral-800-color);	
+	transition: all 0.5s ease-in-out;
+}
+
+.inputContainer input{ 
+    border: 0;
+    border-bottom: 1px solid var(--neutral-400-color);  
+    background: transparent;
+    width: 80vw;
+    padding: 0.5rem 0 0 0;
+    font-size: 1.2rem; 
+    color: var(--neutral-1100-color);
+}
+
+@media (min-width: 768px) {
+    .form {
+        width: 40vw;
+    }
+
+    .inputContainer input {
+        width: 35vw;
+    }
+}
+  
+@media (min-width: 1440px) {
+    .form {
+        width: 30vw;
+    }
+
+    .inputContainer input {
+        width: 25vw;
+    }
+}
+
+.inputContainer input:focus{ 
+    border: none;	
+    outline: none;
+    border-bottom: 1px solid var(--neutral-600-color);	
+}
+
+.inputContainer input:focus ~ label,
+.inputContainer input:valid ~ label{
+	top: -1.1rem;
+	font-size: 1.2rem;
+}
+
+.error {
+    padding: 0.5rem;
+    font-style: italic;
+    font-weight: 200;
+    font-size: 1rem;
+    text-align: center;
+    overflow: hidden;
+    color: rgba(255, 100, 100, 0.8);
+}
+
+.submit {
+    margin: 0.5rem;
+    border: none;	
+    outline: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--neutral-600-color);
+    color: var(--neutral-200-color);
+    transform: scale(0.9);
+    transition: all 0.3s;
+}
+
+.disabled {
+    color: var(--neutral-100-color);
+    background-color: var(--neutral-400-color);
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.loading {
+    border-radius: 0px;
+    color: var(--neutral-100-color);
+    background-color: var(--neutral-800-color);
+    opacity: 0.8;
+}
+
+.buttonInfoContainer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} 
+
+.buttonInfo {
+    display: block;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    text-align: center;
+    z-index: 10;
+    border: none;	
+    outline: none;
+    padding: 0.5rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+    color: var(--neutral-800-color);
+    background-color: var(--neutral-400-color);
+    cursor: pointer;
+    line-height: 2rem;
+    letter-spacing: 0;
+    transition: all 0.3s;
+}
+
+.buttonInfo:active {
+    transform: scale(0.9);
+    color: var(--neutral-400-color);
+    background-color: var(--neutral-800-color);
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0;
+}
+
+.passwordVisibility {
+    display: block;
+    position: absolute;
+    right: 0rem;
+    top: 0.5rem;
+    text-align: center;
+    z-index: 10;
+    border: none;	
+    outline: none;
+    padding: 0.25rem;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 5px;
+    color: var(--neutral-800-color);
+    background-color: var(--neutral-400-color);
+    cursor: pointer;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+    transition: all 0.3s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.passwordVisibility:active {
+    transform: scale(0.9);
+    color: var(--neutral-400-color);
+    background-color: var(--neutral-800-color);
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+}

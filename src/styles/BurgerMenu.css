@@ -1,0 +1,107 @@
+.menu {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    z-index: 110;
+}
+
+.line {
+    fill: none;
+    stroke: var(--neutral-500A-color);
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.menu-main-container {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 0;
+    overflow: scroll;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-color: var(--neutral-0-color);
+    border-bottom: var(--neutral-300-color);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.menu-main-container.menu-main-opened {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    transform: translate(0, 0);
+}
+
+.links {
+    display: block;
+    visibility: hidden;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-main-container.menu-main-opened .links {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+    
+.link-item {
+    display: block;
+    text-align: center;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    color: var(--neutral-900-color);
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 0.75rem 0;
+    transition: all 0.3s ease;
+}
+
+.link-item:hover {
+    color: var(--neutral-100-color);
+    background-color: var(--neutral-600-color);
+}

@@ -1,0 +1,81 @@
+.mainContainer {
+    display: flex;
+}
+
+.input[type="checkbox"] {
+	visibility: hidden;
+	&:checked + label {
+        animation: checking .75s ease-in-out;
+		background-color: var(--neutral-400-color);
+		&:before {
+			transform: translateX(2rem);
+			background-color: var(--neutral-800-color);
+		}
+	}
+    &:not(:checked) + .label {
+		animation: unchecking .75s ease-in-out;
+		background-color: var(--neutral-400-color);
+
+		&:before {
+			transform: translateX(0);
+			background-color: var(--neutral-800-color);
+		}
+	}
+}
+
+@keyframes checking {
+    0% {
+        transform: rotate(0) scale(1);
+        filter: blur(0px);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(0.75);
+        filter: blur(2px);
+    } 
+    
+    100% {
+        transform: rotate(360deg) scale(1);
+        filter: blur(0px);
+    }
+}
+
+@keyframes unchecking {
+	0% {
+		transform: rotate(0) scale(1);
+        filter: blur(0px);
+	}
+	50% {
+		transform: rotate(180deg) scale(0.75);
+        filter: blur(2px);
+	}
+	100% {
+		transform: rotate(360deg) scale(1);
+        filter: blur(0px);
+	}
+}
+
+.label {
+	display: flex;
+	width: 3.5rem;
+	height: 1.5rem;
+	border-radius: 99em;
+	position: relative;
+	transition: transform .75s ease-in-out;
+	transform-origin: 50% 50%;
+	cursor: pointer;
+	
+	&:before {
+		transition: transform .75s ease;
+		transition-delay: .5s;
+		content: "";
+		display: block;
+		position: absolute;
+		width: 1.2rem;
+		height: 1.2rem;
+		background-color: var(--neutral-400-color);
+		border-radius: 50%;
+        top: 0.15rem;
+		left: 0.15rem;
+	}
+}

@@ -1,0 +1,22 @@
+.modal-custom .modal-content {
+    background-color: var(--neutral-200-color);
+    border-radius: 8px;
+    font-family: "Raleway", sans-serif;
+    color: var(--neutral-800-color);
+    border: none;
+}
+
+.modal-custom .modal-header {
+    border: none;
+}
+
+.modal-custom .modal-footer {
+    border: none;
+}
+
+.modal-custom button {
+    background-color: var(--neutral-800-color);
+    color: var(--neutral-200-color);
+    border: none;
+    font-weight: 300;
+}

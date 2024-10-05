@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5;
+    background-color: var(--neutral-0-color);
+}
+
+:root {
+    --neutral-0-color: rgb(255, 255, 255);
+    --neutral-100-color: rgb(255, 255, 255);
+    --neutral-200-color: rgb(255, 255, 255);
+    --neutral-300-color: rgb(255, 255, 255);
+    --neutral-400-color: rgb(255, 255, 255);
+    --neutral-500-color: rgb(255, 255, 255);
+    --neutral-600-color: rgb(255, 255, 255);
+    --neutral-700-color: rgb(255, 255, 255);
+    --neutral-800-color: rgb(255, 255, 255);
+    --neutral-900-color: rgb(255, 255, 255);
+    --neutral-1000-color: rgb(255, 255, 255);
+    --neutral-1100-color: rgb(255, 255, 255);
+    --neutral-100A-color: rgba(255, 255, 255, 1);
+    --neutral-200A-color: rgba(255, 255, 255, 1);
+    --neutral-300A-color: rgba(255, 255, 255, 1);
+    --neutral-400A-color: rgba(255, 255, 255, 1);
+    --neutral-500A-color: rgba(255, 255, 255, 1);
+}
+
+[data-theme="light"] {
+    --neutral-0-color: rgb(255,255,255);
+    --neutral-100-color: rgb(247,248,249);
+    --neutral-200-color: rgb(241,242,244);
+    --neutral-300-color: rgb(220,223,228);
+    --neutral-400-color: rgb(179,185,196);
+    --neutral-500-color: rgb(133,144,162);
+    --neutral-600-color: rgb(117,129,149);
+    --neutral-700-color: rgb(98,111,134);
+    --neutral-800-color: rgb(68,84,111);
+    --neutral-900-color: rgb(44,62,93);
+    --neutral-1000-color: rgb(23,43,77);
+    --neutral-1100-color: rgb(9,30,66);
+    --neutral-100A-color: rgba(9,30,66,0.03);
+    --neutral-200A-color: rgba(9,30,66,0.06);
+    --neutral-300A-color: rgba(9,30,66,0.14);
+    --neutral-400A-color: rgba(9,30,66,0.31);
+    --neutral-500A-color: rgba(9,30,66,0.49);
+}
+
+[data-theme="dark"] {
+    --neutral-0-color: rgb(22,26,29);
+    --neutral-100-color: rgb(29,33,37);
+    --neutral-200-color: rgb(34,39,43);
+    --neutral-300-color: rgb(44,51,58);
+    --neutral-400-color: rgb(69,79,89);
+    --neutral-500-color: rgb(89,103,115);
+    --neutral-600-color: rgb(115,132,150);
+    --neutral-700-color: rgb(140,155,171);
+    --neutral-800-color: rgb(159,173,188);
+    --neutral-900-color: rgb(182,194,207);
+    --neutral-1000-color: rgb(199,209,219);
+    --neutral-1100-color: rgb(222,228,234);
+    --neutral-100A-color: rgba(188,214,240,0.04);
+    --neutral-200A-color: rgba(161,189,217,0.08);
+    --neutral-300A-color: rgba(166,197,226,0.16);
+    --neutral-400A-color: rgba(191,219,248,0.28);
+    --neutral-500A-color: rgba(155,180,202,0.5);
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: var(--neutral-0-color);
+    scrollbar-width: thin;
+    scrollbar-color: var(--neutral-300-color) var(--neutral-100-color);
+}
+
+::selection {
+    background-color: rgba(255, 120, 219, 0.5);
+    color: whitesmoke;
+  }
+  
+::-moz-selection {
+    background-color: rgba(255, 120, 219, 0.5);
+    color: whitesmoke;
+}
+  
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+  
+::-webkit-scrollbar-track {
+    background-color: var(--neutral-0-color);
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-300-color);
+    border-radius: 5px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--neutral-500-color);
+}

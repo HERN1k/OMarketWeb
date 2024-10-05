@@ -1,0 +1,144 @@
+.header {
+    width: 100vw;
+    height: 4rem;
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--neutral-0-color);
+    border-bottom: solid 1px var(--neutral-300-color);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-menu {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+}
+
+.body {
+    min-height: calc(100vh - 3rem);
+    width: 100vw;
+    background-color: var(--neutral-200-color);
+}
+
+.footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--neutral-0-color);
+    border-top: solid 1px var(--neutral-300-color);
+}
+
+.headerTitle {
+    display: block;
+    color: var(--neutral-900-color);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.createdBy {
+    display: block;
+    margin: 0.5rem;
+    color: var(--neutral-900-color);
+}
+
+.notFoundContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFoundTitle {
+    color: rgb(253, 83, 83);
+}
+
+.notFoundText {
+    color: var(--neutral-700-color);
+    display: block;
+    margin-top: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.greetingContainer {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 3rem);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.greetingTitle {
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--neutral-900-color);
+    letter-spacing: 2px;
+}
+
+.greetingText {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--neutral-700-color);
+    letter-spacing: 2px;
+}
+
+
+.logoutContainer {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 3rem);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoutForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.logoutTitle {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--neutral-900-color);
+    letter-spacing: 2px;
+}
+
+.logoutSubmit {
+    margin: 0.5rem;
+    border: none;	
+    outline: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--neutral-600-color);
+    color: var(--neutral-200-color);
+    transform: scale(0.9);
+    transition: all 0.3s;
+}
+
+.logoutLoading {
+    border-radius: 0px;
+    color: var(--neutral-100-color);
+    background-color: var(--neutral-800-color);
+    opacity: 0.8;
+}
