@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Admin, City, Store } from "./Type.type";
+import { Admin, City, ProductType, Store } from "./Type.type";
 import { ILoginForm } from "./Form.interface";
 
 export interface IStoresFormProps {
@@ -26,6 +26,12 @@ export interface IAdminFormProps {
     setAdmins: Dispatch<SetStateAction<Admin[] | null>>,
     stores: Store[] | null,
     setStores: Dispatch<SetStateAction<Store[] | null>>,
+    showLoader: () => void, 
+    hideLoader: () => void
+}
+
+export interface IProductsFormProps {
+    productTypes: ProductType[],
     showLoader: () => void, 
     hideLoader: () => void
 }

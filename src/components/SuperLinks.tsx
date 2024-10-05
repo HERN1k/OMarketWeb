@@ -11,7 +11,7 @@ const SuperLinks: FC = () => {
             <Link onClick={toggleMenuLink} className="link-item" to={"cities"}>Міста</Link>
             <Link onClick={toggleMenuLink} className="link-item" to={"stores"}>Магазини</Link>
             <Link onClick={toggleMenuLink} className="link-item" to={"admins"}>Адміністратори</Link>
-            <Link onClick={toggleMenuLink} className="link-item" to={"logout"}>Товари</Link>
+            <Link onClick={toggleMenuLink} className="link-item" to={"products"}>Товари</Link>
             <Link onClick={toggleMenuLink} className="link-item" to={"reviews"}>Відгуки</Link>
             <Link onClick={toggleMenuLink} className="link-item" to={"customers"}>Клієнти</Link>
             <Link onClick={toggleMenuLink} className="link-item" to={"logout"}>Вихід</Link>

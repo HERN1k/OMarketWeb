@@ -184,7 +184,7 @@ const ChangeStoreInfoFrom: FC<IStoresFormProps> = ({ stores, showLoader, hideLoa
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         X
-                    </Button>
+                    </Button> 
                 </Modal.Footer>
             </Modal>
         </>

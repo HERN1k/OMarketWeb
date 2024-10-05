@@ -162,3 +162,91 @@ export const modalTextChangeStoreInfo: string = `
     Поле &laquo;Телеграм чат ID&raquo;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&bull; Повинно бути цілим числом, може бути як негативним так і позитивним.<br>
 `;
+
+export const modalTextCustomers: string = `
+    Поле &laquo;Клієнт&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Не має бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має містити номер телефону клієнта або його унікальний ідентифікатор.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Повинен містити лише цифри та/або знак: +<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад унікального ідентифікатора: 7265241<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад номеру телефона: +380930884848<br>
+    <br>
+    Поля &laquo;Пошук за ID клієнта&raquo; та &laquo;Пошук за номером телефону&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Потрібно вибрати одне з цих полів.<br>
+`;
+
+export const modalTextAddNewProductForm: string = `
+    Поле &laquo;Тип товару&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Не має бути пустим.<br>
+    <br>
+    Поле &laquo;Під-тип товару&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Не має бути пустим.<br>
+    <br>
+    Поле &laquo;Назва&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не менше 1 символа.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 32 символів.<br>
+    <br>
+    Поле &laquo;Ціна&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не менше 1 символа.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 10 символів.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути в діапазоні від 0 включно до +безкінечність<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Максимальна дробна частина це 2 знаки.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 12.99<br>
+    <br>
+    Поле &laquo;Характеристика&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Може бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 32 символів.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 0.5л<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 120гр<br>
+    <br>
+    Поле &laquo;Опис&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Може бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 64 символів.<br>
+    <br>
+    Поле &laquo;Фото&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Не має бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Доступні розширення файлу це "webp" "jpg", "jpeg", "png".<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Бажане розширення файлу це "webp".<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Бажаний формат це 1х1.<br>
+`;
+
+export const modalTextChangeProductForm: string = `
+    Поле &laquo;ID товару&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Не має бути пустим.<br>
+    <br>
+    Поле &laquo;Назва&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Може бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не менше 1 символа.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 32 символів.<br>
+    <br>
+    Поле &laquo;Ціна&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Може бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не менше 1 символа.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 10 символів.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути в діапазоні від 0 включно до +безкінечність<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Максимальна дробна частина це 2 знаки.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 12.99<br>
+    <br>
+    Поле &laquo;Характеристика&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Може бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 32 символів.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 0.5л<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 120гр<br>
+    <br>
+    Поле &laquo;Опис&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Може бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 64 символів.<br>
+    <br>
+    Поле &laquo;Фото&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Може бути пустим.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Доступні розширення файлу це "webp" "jpg", "jpeg", "png".<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Бажане розширення файлу це "webp".<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Бажаний формат це 1х1.<br>
+`;
+
+export const modalTextRemoveProductForm: string = `
+    Поле &laquo;ID товару&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Не має бути пустим.<br>
+`;

@@ -122,7 +122,7 @@ const AddNewStoreForm: FC<IStoresFormProps> = ({ showLoader, hideLoader }) => {
                                 value: /^(\+?)(\d{1,3})\s?(\d{1,4})\s?(\d{1,4})\s?(\d{1,9})$/, 
                                 message: "Дані введені в невірному форматі"
                             }
-                        })} />
+                        })} /> 
 
                     <label>Номер телефону</label>
 
@@ -132,14 +132,15 @@ const AddNewStoreForm: FC<IStoresFormProps> = ({ showLoader, hideLoader }) => {
                 </div>
 
                 <div className={styles.inputContainer}>
-                    <input type="number" step="0.000001" required={true} {...register("latitude", { 
+                    <input type="text" required={true} {...register("latitude", { 
                             required: {
                                 value: true,
                                 message: "Це поле є обов'язковим"
                             },
-                            pattern: {
-                                value: /^([-+]?([1-8]?[0-9](\.\d{1,6})?|90(\.0{1,6})?))$/, 
-                                message: "Дані введені в невірному форматі"
+                            validate: (value) => {
+                                if (String(value) === "" || value === undefined) return true;
+                
+                                return /^([-+]?([1-8]?[0-9](\.\d{1,6})?|90(\.0{1,6})?))$/.test(String(value)) || "Дані введені в невірному форматі";
                             }
                         })} />
 
@@ -151,14 +152,15 @@ const AddNewStoreForm: FC<IStoresFormProps> = ({ showLoader, hideLoader }) => {
                 </div>
 
                 <div className={styles.inputContainer}>
-                    <input type="number" step="0.000001" required={true} {...register("longitude", { 
+                    <input type="text" required={true} {...register("longitude", { 
                             required: {
                                 value: true,
                                 message: "Це поле є обов'язковим"
                             },
-                            pattern: {
-                                value: /^([-+]?((1[0-7][0-9])|(0?[0-9]{1,2}))(\.\d{1,6})?|180(\.0{1,6})?)$/, 
-                                message: "Дані введені в невірному форматі"
+                            validate: (value) => {
+                                if (String(value) === "" || value === undefined) return true;
+                
+                                return /^([-+]?((1[0-7][0-9])|(0?[0-9]{1,2}))(\.\d{1,6})?|180(\.0{1,6})?)$/.test(String(value)) || "Дані введені в невірному форматі";
                             }
                         })} />
 

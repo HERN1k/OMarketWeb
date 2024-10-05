@@ -61,3 +61,36 @@ export interface IStoreReviewFrom {
     storeId: string,
     page: number
 }
+
+export interface ICustomerFrom {
+    customer: string,
+    option: string
+} 
+ 
+export interface IAddNewProductFrom {
+    typeId: string,
+    underTypeId: string,
+    name: string,
+    price: number,
+    dimensions: string,
+    description: string,
+    file: FileList
+} 
+
+export interface IChangeProductFrom {
+    productId: string,
+    name: string,
+    price: number,
+    dimensions: string,
+    description: string,
+    file: FileList
+}
+
+export interface IRemoveProductFrom {
+    productId: string
+}
+
+export interface ITypeProductFrom {
+    typeId: string,
+    page: number
+}

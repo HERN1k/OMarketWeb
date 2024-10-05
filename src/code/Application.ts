@@ -181,3 +181,14 @@ export const toLocalDate: (dateString: string) => string = (dateString) => {
     
     return `${formattedDate} ${formattedTime}`;
 }
+
+export const toUAH: (price: string) => string = (price) => {
+    const formatter = new Intl.NumberFormat("uk-UA", {
+        style: "currency",
+        currency: "UAH",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    return formatter.format(Number(price));
+}

@@ -1,4 +1,4 @@
-import { Admin, City, Customer, Review, Store } from "./Type.type";
+import { Admin, City, Customer, Product, ProductType, Review, Store } from "./Type.type";
 
 export interface IErrorResponse {
     status: string,
@@ -46,6 +46,24 @@ export interface IStoreReviewResponse {
 
 export interface ICustomerResponse {
     data?: Customer,
+    status: string,
+    message: string
+}
+
+export interface IProductTypesResponse {
+    data: ProductType[],
+    status: string,
+    message: string
+}
+
+export interface ITypeProductData {
+    products: Product[],
+    pageCount: number,
+    totalQuantity: number
+}
+
+export interface ITypeProductResponse {
+    data: ITypeProductData,
     status: string,
     message: string
 }

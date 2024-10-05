@@ -31,7 +31,7 @@ const Reviews: FC = () => {
         setPageCount(res.pageCount);
         setTotalQuantity(res.totalQuantity);
         setCurrentPage(data.page)
-        hideLoader();
+        hideLoader(); 
     };
 
     const handleNextPage = async () => {
@@ -107,7 +107,7 @@ const Reviews: FC = () => {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => { 
         if (loading) { 
             document.body.style.overflow = "hidden";
         } else {

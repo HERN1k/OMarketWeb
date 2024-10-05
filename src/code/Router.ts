@@ -11,6 +11,7 @@ import Stores from "../pages/Stores.tsx";
 import Admins from "../pages/Admins.tsx";
 import Reviews from "../pages/Reviews.tsx";
 import Customers from "../pages/Customers.tsx";
+import Products from "../pages/Products.tsx";
 
 export const router = createBrowserRouter([ 
     {
@@ -61,6 +62,11 @@ export const router = createBrowserRouter([
             {
                 path: "customers",
                 element: React.createElement(Customers),
+                errorElement: React.createElement(NotFound)
+            },
+            {
+                path: "products",
+                element: React.createElement(Products),
                 errorElement: React.createElement(NotFound)
             },
           ],

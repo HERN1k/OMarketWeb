@@ -142,7 +142,7 @@ const Login: FC = () => {
                     className={`${styles.submit} ${!isValid ? styles.disabled : ""} ${isSubmitting ? styles.loading : ""}`}
                     disabled={!isValid || isSubmitting}>
                     Надіслати
-                </button>
+                </button> 
             </form>
 
             <Modal show={showModal} onHide={handleClose} dialogClassName="modal-custom">

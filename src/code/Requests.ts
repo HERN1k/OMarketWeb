@@ -1,5 +1,5 @@
 import axios from "./Axios.ts";
-import { Admin, City, Customer } from "../types/Type.type.ts";
+import { Admin, City, Customer, ProductType } from "../types/Type.type.ts";
 import { ILoginRequestProps } from "../types/Props.interface";
 import { 
     IAdminsResponse,
@@ -9,24 +9,32 @@ import {
     IStoreReviewResponse, 
     IStoreReviewData, 
     IStoresResponse,
-    ICustomerResponse
+    ICustomerResponse,
+    IProductTypesResponse,
+    ITypeProductData,
+    ITypeProductResponse
 } from "../types/Response.interface.ts";
 import { 
     IAddNewAdminForm,
     IAddNewCityForm, 
+    IAddNewProductFrom, 
     IAddNewStoreForm, 
     IChangeAdminPasswordForm, 
     IChangeCityNameFrom, 
     IChangePasswordForm, 
+    IChangeProductFrom, 
     IChangeStoreInfoFrom, 
     IRemoveAdminForm, 
     IRemoveCityForm, 
+    IRemoveProductFrom, 
     IRemoveStoreForm,
-    IStoreReviewFrom
+    IStoreReviewFrom,
+    ITypeProductFrom
 } from "../types/Form.interface.ts";
 import { 
     AddNewAdmin,
     AddNewCity,
+    AddNewProduct,
     AddNewStore,
     Admins,
     BlockCustomerOrders,
@@ -34,14 +42,18 @@ import {
     ChangeAdminPassword,
     ChangeCityName,
     ChangePassword,
+    ChangeProduct,
     ChangeStoreInfo,
     Cities,
     GetCustomerById,
     GetCustomerByPhoneNumber,
+    GetProducts,
     Login,
     Logout,
+    ProductTypes,
     RemoveAdmin,
     RemoveCity,
+    RemoveProduct,
     RemoveStore,
     RemoveStoreReview,
     StoreReview,
@@ -471,5 +483,130 @@ export const fetchGetCustomerByPhoneNumberAsync: (phoneNumber: string) => Promis
         console.error(error);
         alert(error);
         return null; 
+    }
+}
+
+export const fetchProductTypesAsync: () => Promise<ProductType[]> = async () => {
+    try {
+        const response = await axios.get<IProductTypesResponse>(ProductTypes);
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return [];
+        }
+        
+        return response.data.data;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return []; 
+    }
+}
+
+export const fetchAddNewProductAsync: (data: IAddNewProductFrom) => Promise<boolean> = async (data) => {
+    try {
+        const formData = new FormData();
+
+        formData.append("file", data.file[0]);
+        formData.append("metadata", JSON.stringify({
+            typeId: data.typeId,
+            underTypeId: data.underTypeId,
+            name: data.name,
+            price: data.price,
+            dimensions: data.dimensions,
+            description: data.description
+        }));
+
+        const response = await axios.post<IErrorResponse>(AddNewProduct, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return false; 
+    }
+}
+
+export const fetchChangeProductAsync: (data: IChangeProductFrom) => Promise<boolean> = async (data) => {
+    try {
+        const formData = new FormData();
+
+        if (data.file[0] != undefined) {
+            formData.append("file", data.file[0]);
+        }
+        formData.append("metadata", JSON.stringify({
+            productId: data.productId,
+            name: data.name,
+            price: data.price,
+            dimensions: data.dimensions,
+            description: data.description
+        }));
+
+        const response = await axios.post<IErrorResponse>(ChangeProduct, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return false; 
+    }
+}
+
+export const fetchRemoveProductAsync: (data: IRemoveProductFrom) => Promise<boolean> = async (data) => {
+    try {
+        const response = await axios.get<IErrorResponse>(RemoveProduct, {
+            params: { productId: data.productId }
+        });
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return false; 
+    }
+}
+
+export const fetchTypeProductAsync: (data: ITypeProductFrom) => Promise<ITypeProductData> = async (data) => {
+    try {
+        const response = await axios.get<ITypeProductResponse>(GetProducts, {
+            params: {
+                typeId: data.typeId,
+                page: data.page
+            }
+        });
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return { products: [], pageCount: 0, totalQuantity: 0 };
+        }
+        
+        return response.data.data;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return { products: [], pageCount: 0, totalQuantity: 0 };
     }
 }

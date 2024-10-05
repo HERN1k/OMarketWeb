@@ -191,6 +191,129 @@
     color: var(--neutral-1100-color);
 }
 
+.inputRadioContainer {
+    position:relative;
+    width: 100%;
+    font-size: 1.2rem; 
+    color: var(--neutral-800-color);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radioItem [type="radio"] {
+	display: none;
+}
+
+.radioItem + .radioItem {
+	margin-top: 1rem;
+}
+
+.radioItem label {
+	display: block;
+	padding: 1rem 3rem;
+	background: transparent;
+	border: 2px solid var(--neutral-400-color);
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1.25rem;
+	font-weight: 400;
+	min-width: 2rem;
+	white-space: nowrap;
+	position: relative;
+	transition: 0.4s ease-in-out 0s;
+}
+
+.radioItem label:after,
+.radioItem label:before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+
+.radioItem label:after {
+	height: 1.5rem;
+	width: 1.5rem;
+	border: 2px solid var(--neutral-500-color);
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.radioItem label:before {
+	background: var(--neutral-900-color);
+	height: 1.5rem;
+	width: 1.5rem;
+	left: 1.5rem;
+    top: 50%;
+    transform: scale(2);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.25s ease-in-out 0s;
+}
+
+.radioItem [type="radio"]:checked ~ label {
+	border-color: var(--neutral-900-color);
+}
+
+.radioItem [type="radio"]:checked ~ label::before {
+	opacity: 1;
+	visibility: visible;
+    z-index: 10;
+	transform: scale(1) translateY(-50%) translateX(-50%);
+}
+
+.inputFileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+	margin-bottom:1rem;
+    width: 100%;
+}
+
+.inputFileContainer input{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputFileContainer label{
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--neutral-900-color);
+    border: solid 2px var(--neutral-900-color);
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    background-color: transparent;
+    display: block;
+    cursor: pointer;
+}
+
+.productPreviewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 16rem;
+    border: solid 2px var(--neutral-900-color);
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: transform 0.2s;
+}
+
+.productPreview {
+    max-width: 100%;
+    height: auto;  
+    border-radius: 6px;
+    object-fit: cover;
+}
+
 @media (min-width: 768px) { 
     .form {
         width: 80vw;
@@ -469,4 +592,92 @@
     color: var(--neutral-200-color);
     transform: scale(0.9);
     transition: all 0.3s;
+}
+
+.сustomerConteiner {
+    display: block;
+    width: 100%;
+    background-color: var(--neutral-400-color);
+    min-height: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.сustomerTitle {
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: var(--neutral-900-color);
+}
+
+.сustomerTitle span {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--neutral-800-color);
+    text-decoration: underline;
+}
+
+.blockedCustomerButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    row-gap: 1rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.blockedCustomerButton {
+    border: none;	
+    outline: none;
+    padding: 0.25rem;
+    font-weight: 500;
+    color: var(--neutral-900-color);
+    border: solid 2px var(--neutral-900-color); 
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.blockedCustomerButton:hover {
+    color: var(--neutral-1100-color);
+    border: solid 2px var(--neutral-1100-color); 
+}
+
+.blockedCustomerButton:active {
+    transform: translateY(1px) scale(0.999);
+    color: var(--neutral-1100-color);
+    border: solid 2px var(--neutral-1100-color); 
+}
+
+.productQuantity {
+    font-size: 1.5rem;
+    color: var(--neutral-600-color);
+    padding-bottom: 1rem;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+
+.productContainer {
+    border: solid 1px var(--neutral-600-color);
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.productText {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--neutral-900-color);
+}
+
+.productText span{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--neutral-700-color);
 }

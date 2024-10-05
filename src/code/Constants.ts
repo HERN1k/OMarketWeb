@@ -49,3 +49,13 @@ export const UnBlockCustomerOrders: string = "/admin/unblock-customer-orders";
 export const GetCustomerById: string = "/admin/get-customer-by-id";
 
 export const GetCustomerByPhoneNumber: string = "/admin/get-customer-by-phone-number";
+
+export const ProductTypes: string = "/admin/product-types";
+
+export const AddNewProduct: string = "/admin/add-new-product";
+
+export const ChangeProduct: string = "/admin/change-product";
+
+export const RemoveProduct: string = "/admin/remove-product";
+
+export const GetProducts: string = "/admin/get-products";

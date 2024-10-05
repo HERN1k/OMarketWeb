@@ -48,3 +48,27 @@ export type Customer = {
     blockedOrders: boolean,
     blockedReviews: boolean,
 }
+
+export type ProductUnderType = {
+    underTypeId: string,
+    underType: string
+} 
+
+export type ProductType = {
+    typeId: string,
+    type: string,
+    underTypes: ProductUnderType[]
+} 
+
+export type Product = {
+    id: string,
+    name: string,
+    photoUri: string,
+    typeId: string,
+    type: string,
+    underType: string,
+    price: string,
+    dimensions: string,
+    description: string,
+    status: boolean,
+}
