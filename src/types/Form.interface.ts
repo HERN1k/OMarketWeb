@@ -57,6 +57,14 @@ export interface IChangeStoreInfoFrom {
     tgChatId?: number 
 }
 
+export interface IChangeStoreInfoBaseFrom {
+    address?: string,
+    phoneNumber?: string,
+    longitude?: number,
+    latitude?: number,
+    tgChatId?: number 
+}
+
 export interface IStoreReviewFrom {
     storeId: string,
     page: number

@@ -3,6 +3,7 @@ import { toggleMenu } from "../code/Application.ts";
 import useBurgerMenu from "../hooks/useBurgerMenu.tsx";
 import DefaultLinks from "./DefaultLinks.tsx";
 import SuperLinks from "./SuperLinks.tsx";
+import BaseLinks from "./BaseLinks.tsx";
 import "../styles/BurgerMenu.css";
 
 const BurgerMenu: FC = () => {
@@ -13,9 +14,28 @@ const BurgerMenu: FC = () => {
 
     useEffect(() => {
         
-        setLinks(authorized ? <DefaultLinks /> : <SuperLinks />);
+        setLinks(getLinks);
 
-    }, [authorized])
+    }, [authorized]) 
+    
+    const getLinks: () => JSX.Element = () => {
+
+        if (authorized) {
+            return <DefaultLinks />;
+        }
+
+        const role: string = localStorage.getItem("permission") ?? "";
+
+        if (role === "") {
+            return <DefaultLinks />;
+        } else if (role === "Admin") {
+            return <BaseLinks />;
+        } else if (role === "SuperAdmin") {
+            return <SuperLinks />;
+        } else {
+            return <DefaultLinks />;
+        }
+    }
             
     return (
         <>

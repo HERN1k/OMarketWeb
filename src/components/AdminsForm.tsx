@@ -23,13 +23,13 @@ const AdminsForm: FC<IAdminFormProps> = ({ admins, setAdmins, showLoader, hideLo
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <h2 className={styles.title}>Перелік Адміністраторів</h2>
 
+            <div className={styles.adminsQuantity}>Кількість адміністраторів: {admins?.length}</div>
+
             {admins?.map((item, index) => (
-                <div key={index} className={styles.storeListContainer}>
-                    <h4 className={styles.storeListItemIndex}><span>№{++index}</span></h4>
-                    <h4 className={styles.storeListItemTitle}><span>Магазин:</span> {item.storeName != " " ? item.storeName : "Немає"}</h4>
-                    <h5 className={styles.storeListItem}><span>Логін:</span> {item.login ?? "Немає"}</h5>
-                    <h5 className={styles.storeListItem}><span>Дозвіл:</span> {item.permission ?? "Немає"}</h5>
-                    <h5 className={styles.storeListItemLast}><span>Телеграм чат id:</span> {item.tgAccountId ?? "Немає"}</h5>
+                <div key={index} className={styles.adminsContainer}>
+                    <h4 className={styles.adminsText}><span>Магазин:</span> {item.storeName != " " ? item.storeName : "Немає"}</h4>
+                    <h5 className={styles.adminsText}><span>Логін:</span> {item.login ?? "Немає"}</h5>
+                    <h5 className={styles.adminsText}><span>Дозвіл:</span> {item.permission ?? "Немає"}</h5>
                 </div>))}
 
             <button type="submit" className={`${styles.submit} ${isSubmitting ? styles.loading : ""}`}>

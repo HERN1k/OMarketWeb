@@ -12,10 +12,14 @@ import Admins from "../pages/Admins.tsx";
 import Reviews from "../pages/Reviews.tsx";
 import Customers from "../pages/Customers.tsx";
 import Products from "../pages/Products.tsx";
+import BaseReviews from "../pages/BaseReviews.tsx";
+import BaseProducts from "../pages/BaseProducts.tsx";
+import StoresBase from "../pages/StoresBase.tsx";
+import Reference from "../pages/Reference.tsx";
 
 export const router = createBrowserRouter([ 
     {
-        path: "/web",
+        path: "/",
         element: React.createElement(App),
         errorElement: React.createElement(NotFound),
         children: [
@@ -69,6 +73,26 @@ export const router = createBrowserRouter([
                 element: React.createElement(Products),
                 errorElement: React.createElement(NotFound)
             },
-          ],
+            {
+                path: "base-reviews",
+                element: React.createElement(BaseReviews),
+                errorElement: React.createElement(NotFound)
+            },
+            {
+                path: "base-products",
+                element: React.createElement(BaseProducts),
+                errorElement: React.createElement(NotFound)
+            },
+            {
+                path: "stores-base",
+                element: React.createElement(StoresBase),
+                errorElement: React.createElement(NotFound)
+            },
+            {
+                path: "reference",
+                element: React.createElement(Reference),
+                errorElement: React.createElement(NotFound)
+            },
+        ],
     },    
 ]);

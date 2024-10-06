@@ -41,7 +41,7 @@ const Login: FC = () => {
         {
             hideLoader();
             setAuthorized(true);
-            navigate("/web/greeting");
+            navigate("/greeting");
             window.location.reload();
             return;
         }
@@ -51,7 +51,7 @@ const Login: FC = () => {
     useEffect(() => {
         if (localStorage.getItem("login") != undefined)
         {
-            navigate("/web/greeting");
+            navigate("/greeting");
         }
     }, [])
 

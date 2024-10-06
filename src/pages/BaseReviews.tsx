@@ -1,14 +1,18 @@
 import { FC, useState, useEffect } from "react";
-import styles from "../styles/Form.module.css"; 
+import styles from "../styles/Form.module.css";
 import useLoader from "../hooks/useLoader";
 import Loader from "../components/Loader";
 import { Review, Store } from "../types/Type.type";
 import { IStoreReviewFrom } from "../types/Form.interface";
-import { fetchBlockCustomerReviewsAsync, fetchRemoveStoreReviewAsync, fetchStoreReviewAsync, fetchStoresAsync } from "../code/Requests";
+import { 
+    fetchBlockCustomerReviewsAsync, 
+    fetchStoreReviewAsync, 
+    fetchStoresAsync 
+} from "../code/Requests";
 import { IStoreReviewData } from "../types/Response.interface";
 import { toLocalDate } from "../code/Application";
 
-const Reviews: FC = () => {
+const BaseReviews: FC = () => {
 
     const [stores, setStores] = useState<Store[] | null>(null);
 
@@ -88,16 +92,6 @@ const Reviews: FC = () => {
         }
     }
 
-    const fetchRemoveReview: (id: string) => Promise<void> = async (id) => {
-        showLoader();
-        const res: boolean = await fetchRemoveStoreReviewAsync(id);
-        hideLoader();
-        if (res) { 
-            alert("Відгук успішно видалено!");
-            await fetchReviews(currentPage);
-        }
-    }
-
     const fetchBlockReviews: (id: string) => Promise<void> = async (id) => {
         showLoader();
         const res: boolean = await fetchBlockCustomerReviewsAsync(id);
@@ -155,10 +149,6 @@ const Reviews: FC = () => {
                         <h2 className={styles.reviewText} style={{paddingLeft: "2rem"}}><span>{review.text}</span></h2>
                         <div className={styles.reviewButtonsBox}>
                             <button className={styles.reviewButton}
-                                onClick={() => fetchRemoveReview(review.id)}>
-                                Видалити відгук
-                            </button>
-                            <button className={styles.reviewButton}
                                 onClick={() => fetchBlockReviews(review.customerId)}>
                                 Заблокувати можливість додавати відгуки
                             </button>
@@ -170,7 +160,7 @@ const Reviews: FC = () => {
                         onClick={handlePreviousPage} 
                         disabled={currentPage === 1}>
                         Назад
-                    </button>
+                    </button> 
                     
                     <div className={styles.currentPage}><h3><span>Стр:</span> {currentPage}</h3></div>
 
@@ -187,4 +177,4 @@ const Reviews: FC = () => {
     );
 }
 
-export default Reviews;
+export default BaseReviews;

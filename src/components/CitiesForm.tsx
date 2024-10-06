@@ -23,12 +23,16 @@ const CitiesForm: FC<ICitiesFormProps> = ({ cities, setCities, hideLoader, showL
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <h2 className={styles.title}>Перелік міст</h2>
 
+            <div className={styles.citiesQuantity}>Кількість міст: {cities?.length}</div>
+
             {cities?.map((item, index) => (
-                <h4 className={styles.cityNameListItem} key={index}><span>№{++index}</span>&nbsp;&nbsp;{item.cityName}</h4>))}
+                <div key={index} className={styles.citiesContainer}>
+                    <h1 className={styles.citiesText}><span>№{++index}</span>&nbsp;&nbsp;{item.cityName}</h1>
+                </div>))}
 
             <button type="submit" className={`${styles.submit} ${isSubmitting ? styles.loading : ""}`}>
                     Оновити
-            </button>
+            </button> 
         </form>
     );
 };

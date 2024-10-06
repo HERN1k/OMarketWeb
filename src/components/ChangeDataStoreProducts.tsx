@@ -3,11 +3,14 @@ import { IProductsFormProps } from "../types/Props.interface";
 import styles from "../styles/Form.module.css";
 import { ITypeProductFrom } from "../types/Form.interface";
 import { ITypeProductData } from "../types/Response.interface";
-import { fetchTypeProductAsync } from "../code/Requests";
+import { 
+    fetchTypeProductWithStoreIdAsync,
+    fetchChangeDataStoreProductStatusAsync
+ } from "../code/Requests";
 import { Product } from "../types/Type.type";
 import { toUAH } from "../code/Application";
 
-const FindProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, hideLoader }) => {
+const ChangeDataStoreProducts: FC<IProductsFormProps> = ({ productTypes, showLoader, hideLoader }) => {
 
     const [products, setProducts] = useState<Product[]>([]);
 
@@ -21,7 +24,7 @@ const FindProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, hid
 
     const onSubmit: (data: ITypeProductFrom) => Promise<void> = async (data) => {
         showLoader();
-        const res: ITypeProductData = await fetchTypeProductAsync(data);
+        const res: ITypeProductData = await fetchTypeProductWithStoreIdAsync(data);
         setProducts(res.products);
         setPageCount(res.pageCount);
         setTotalQuantity(res.totalQuantity);
@@ -67,7 +70,7 @@ const FindProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, hid
     const fetchProductsRefresh: () => Promise<void> = async () => {
         const typeId = currentType == null ? productTypes[0].typeId : currentType ;
         const data: ITypeProductFrom = { typeId, page: 1 };
-        const res: ITypeProductData = await fetchTypeProductAsync(data);
+        const res: ITypeProductData = await fetchTypeProductWithStoreIdAsync(data);
         setProducts(res.products);
         setPageCount(res.pageCount);
         setTotalQuantity(res.totalQuantity);
@@ -75,6 +78,27 @@ const FindProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, hid
         if (res.totalQuantity == 0) {
             alert("Тут пусто.");
         }
+    }
+
+    const inStore: (status: boolean) => JSX.Element = (status) => {
+        return status 
+        ? <h5 style={{ color: "rgba(0, 230, 215, 0.9)" }}>В продажу</h5>
+        : <h5 style={{ color: "rgba(255, 90, 100, 0.9)" }}>Немає в продажу</h5>;
+    }
+
+    const changeStatus: (productId: string) => Promise<void> = async (productId) => {
+        showLoader();
+        const res: boolean = await fetchChangeDataStoreProductStatusAsync(productId);
+        if (res) {
+            setProducts((prevProducts) =>
+                prevProducts.map((product) =>
+                    product.id === productId
+                        ? { ...product, status: !product.status }
+                        : product
+                )
+            );
+        }
+        hideLoader();
     }
 
     return (
@@ -102,6 +126,11 @@ const FindProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, hid
                     <h1 className={styles.productText}><span>Тип:</span> {product.type}</h1>
                     <h1 className={styles.productText}><span>Під-тип:</span> {product.underType}</h1>
                     <h1 className={styles.productText}><span>Опис:</span> {product.description}</h1>
+                    <h1 className={styles.productStatus}><span>Статус:</span> {inStore(product.status)}</h1>
+                    <button onClick={() => changeStatus(product.id)}
+                        className={styles.changeProductStatusButton}>
+                        Змінити статус
+                    </button>
                 </div>))}
 
             <div className={styles.pagination}>
@@ -125,4 +154,4 @@ const FindProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, hid
     );
 }
 
-export default FindProductForm;
+export default ChangeDataStoreProducts;

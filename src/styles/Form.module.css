@@ -437,76 +437,6 @@
     letter-spacing: 0;
 }
 
-.cityNameListItem {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--neutral-800-color);
-    border-bottom: solid 1px var(--neutral-400-color);
-}
-
-.cityNameListItem span {
-    font-size: 1rem;
-}
-
-.storeListContainer {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.storeListItemIndex {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--neutral-800-color);
-    text-align: center;
-    width: 90%;
-}
-
-.storeListItemTitle {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--neutral-800-color);
-    text-align: center;
-    width: 90%;
-}
-
-.storeListItemTitle span{
-    font-size: 1rem;
-    color: var(--neutral-600-color);
-}
-
-.storeListItem {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    color: var(--neutral-800-color);
-    text-align: center;
-    width: 90%;
-}
-
-.storeListItem span{
-    font-size: 1rem;
-    color: var(--neutral-600-color);
-}
-
-.storeListItemLast {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--neutral-800-color);
-    width: 100%;
-    padding-bottom: 1rem;
-    border-bottom: solid 1px var(--neutral-400-color);
-    text-align: center;
-    width: 90%;
-}
-
-.storeListItemLast span{
-    font-size: 1rem;
-    color: var(--neutral-600-color);
-}
-
 .pagination {
     display: flex;
     flex-direction: row;
@@ -542,56 +472,6 @@
     width: 100%;
     text-align: center;
     border-bottom: solid 1px var(--neutral-400-color);
-}
-
-.reviewContainer {
-    width: 100%;
-    padding: 0.5rem;
-    border-bottom: solid 1px var(--neutral-400-color);
-}
-
-.reviewTitle {
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--neutral-600-color);
-    padding: 0.5rem;
-}
-
-.reviewTitle span{
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--neutral-1100-color);
-}
-
-.review {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--neutral-1100-color);
-    padding-left: 2rem;
-}
-
-.reviewButtonsBox {
-    width: 100%;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    row-gap: 0.5rem;
-}
-
-.reviewButton {
-    margin: 0 auto;
-    border: none;	
-    outline: none;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: var(--neutral-600-color);
-    color: var(--neutral-200-color);
-    transform: scale(0.9);
-    transition: all 0.3s;
 }
 
 .сustomerConteiner {
@@ -652,6 +532,8 @@
     border: solid 2px var(--neutral-1100-color); 
 }
 
+/* -------------------------------------------- */
+
 .productQuantity {
     font-size: 1.5rem;
     color: var(--neutral-600-color);
@@ -668,7 +550,7 @@
     border-radius: 5px;
     margin-bottom: 0.5rem;
 }
-
+ 
 .productText {
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
@@ -680,4 +562,267 @@
     font-size: 1.1rem;
     font-weight: 400;
     color: var(--neutral-700-color);
+}
+
+.productName {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--neutral-1100-color);
+    text-decoration: underline;
+}
+
+.productName span{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--neutral-1000-color);
+}
+
+.productStatus {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.productStatus h5{
+    display: inline;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+.productStatus span{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--neutral-1000-color);
+}
+
+.changeProductStatusButton {
+    border: none;	
+    outline: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.25rem;
+    font-weight: 500;
+    color: var(--neutral-900-color);
+    border: solid 2px var(--neutral-900-color); 
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.changeProductStatusButton:hover {
+    color: var(--neutral-1100-color);
+    border: solid 2px var(--neutral-1100-color); 
+}
+
+.changeProductStatusButton:active {
+    transform: translateY(1px) scale(0.999);
+    color: var(--neutral-1100-color);
+    border: solid 2px var(--neutral-1100-color); 
+}
+
+/* -------------------------------------------- */
+
+.reviewQuantity {
+    font-size: 1.5rem;
+    color: var(--neutral-600-color);
+    padding-bottom: 1rem;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+
+.reviewContainer {
+    border: solid 1px var(--neutral-600-color);
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+ 
+.reviewText {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--neutral-900-color);
+}
+
+.reviewText span{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--neutral-700-color);
+}
+
+.reviewButtonsBox {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+    padding: 0;
+}
+
+.reviewButton {
+    text-wrap: nowrap;
+    border: none;	
+    outline: none;
+    padding: 0.25rem;
+    font-weight: 500;
+    color: var(--neutral-900-color);
+    border: solid 2px var(--neutral-900-color); 
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.reviewButton:hover {
+    color: var(--neutral-1100-color);
+    border: solid 2px var(--neutral-1100-color); 
+}
+
+.reviewButton:active {
+    transform: translateY(1px) scale(0.999);
+    color: var(--neutral-1100-color);
+    border: solid 2px var(--neutral-1100-color); 
+}
+
+/* -------------------------------------------- */
+
+.adminsQuantity {
+    font-size: 1.5rem;
+    color: var(--neutral-600-color);
+    padding-bottom: 1rem;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+
+.adminsContainer {
+    border: solid 1px var(--neutral-600-color);
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.adminsText {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--neutral-900-color);
+}
+
+.adminsText span{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--neutral-700-color);
+}
+
+/* -------------------------------------------- */
+
+.storesQuantity {
+    font-size: 1.5rem;
+    color: var(--neutral-600-color);
+    padding-bottom: 1rem;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+
+.storesContainer {
+    border: solid 1px var(--neutral-600-color);
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.storesText {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--neutral-900-color);
+}
+
+.storesText span{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--neutral-700-color);
+}
+
+/* -------------------------------------------- */
+
+.citiesQuantity {
+    font-size: 1.5rem;
+    color: var(--neutral-600-color);
+    padding-bottom: 1rem;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+
+.citiesContainer {
+    border: solid 1px var(--neutral-600-color);
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.citiesText {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--neutral-900-color);
+}
+
+.citiesText span{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--neutral-700-color);
+}
+
+/* -------------------------------------------- */
+
+.referenceConteiner {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+}
+
+.referenceMainTitle {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--neutral-800-color);
+}
+
+.referenceTitle {
+    display: block;
+    position: relative;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--neutral-1100-color);
+    border-top: solid 2px var(--neutral-500-color);
+    padding-top: 1rem;
+}
+
+.referenceText {
+    display: block;
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: justify;
+    margin-bottom: 0.5rem;
+    color: var(--neutral-800-color);
 }

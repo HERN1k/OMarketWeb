@@ -163,6 +163,34 @@ export const modalTextChangeStoreInfo: string = `
     &nbsp;&nbsp;&nbsp;&nbsp;&bull; Повинно бути цілим числом, може бути як негативним так і позитивним.<br>
 `;
 
+export const modalTextChangeStoreInfoBase: string = `
+    Поле &laquo;Адреса&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не менше 3 символів.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 256 символів.<br>
+    <br>
+    Поле &laquo;Номер телефону&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не менше 10 символів.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Має бути не більше 32 символів.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Повинен містити лише цифри та знаки: -()+<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Всі знаки крім "+" будуть прибрані!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: +380930884848<br>
+    <br>
+    Поля &laquo;Широта&raquo; та &laquo;Довгота&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Цілі числа повинні містити дробну частину: 90.00<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Максимальна дробна частина це 6 знаків.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Найкраща точність буде при 6 знаках після крапки.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Приклад: 49.186535<br>
+    <br>
+    Поле &laquo;Широта&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Повинна бути в діапазоні від -90.0 до 90.0 включно.<br>
+    <br>
+    Поле &laquo;Довгота&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Повинна бути в діапазоні від -180.0 до 180.0 включно.<br>
+    <br>
+    Поле &laquo;Телеграм чат ID&raquo;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Повинно бути цілим числом, може бути як негативним так і позитивним.<br>
+`;
+
 export const modalTextCustomers: string = `
     Поле &laquo;Клієнт&raquo;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&bull; Не має бути пустим.<br>

@@ -1,8 +1,8 @@
-export const BaseURL: string = "https://dreamworkout.pp.ua/";
+export const BaseURL: string = "https://dreamworkout.pp.ua/api"; 
 
-export const LoginPage: string = "/web/login";
+export const LoginPage: string = "/login";
 
-export const RefreshToken: string = "auth/refresh-token";
+export const RefreshToken: string = "/auth/refresh-token";
 
 export const Login: string = "/auth/login";
 
@@ -34,6 +34,8 @@ export const ChangeCityName: string = "/admin/change-city-name";
 
 export const ChangeStoreInfo: string = "/admin/change-store-info";
 
+export const ChangeStoreInfoBase: string = "/admin/change-store-info-base";
+
 export const StoreReview: string = "/admin/store-review";
 
 export const RemoveStoreReview: string = "/admin/remove-store-review";
@@ -59,3 +61,7 @@ export const ChangeProduct: string = "/admin/change-product";
 export const RemoveProduct: string = "/admin/remove-product";
 
 export const GetProducts: string = "/admin/get-products";
+
+export const GetProductsWithStore: string = "/admin/get-products-with-store";
+
+export const ChangeDataStoreProductStatus: string = "/admin/change-data-store-product-status";

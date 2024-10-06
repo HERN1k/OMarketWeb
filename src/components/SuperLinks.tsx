@@ -17,6 +17,6 @@ const SuperLinks: FC = () => {
             <Link onClick={toggleMenuLink} className="link-item" to={"logout"}>Вихід</Link>
         </>
     );
-}
+} 
 
 export default SuperLinks;

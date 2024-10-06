@@ -24,8 +24,7 @@ export type Admin = {
     login: string,
     permission: string,
     storeId?: string,
-    storeName: string,
-    tgAccountId?: string,
+    storeName: string
 }
 
 export type Review = {

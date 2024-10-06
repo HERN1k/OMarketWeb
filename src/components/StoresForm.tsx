@@ -13,7 +13,7 @@ const StoresForm: FC<IStoresFormProps> = ({ stores, setStores, showLoader, hideL
         showLoader();
         const res: Store[] = await fetchStoresAsync();
         res.sort((a, b) => {
-            return a.city.length - b.city.length;
+            return a.city.length - b.city.length; 
         });
         setStores(res)
         hideLoader();
@@ -23,12 +23,14 @@ const StoresForm: FC<IStoresFormProps> = ({ stores, setStores, showLoader, hideL
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <h2 className={styles.title}>Перелік магазинів</h2>
 
+            <div className={styles.storesQuantity}>Кількість магазинів: {stores?.length}</div>
+
             {stores?.map((item, index) => (
-                <div key={index} className={styles.storeListContainer}>
-                    <h4 className={styles.storeListItemTitle}><span>№{++index}</span>&nbsp;&nbsp;{item.city} {item.address}</h4>
-                    <h5 className={styles.storeListItem}><span>Адміністратор:</span> {item.adminLogin ?? "Немає"}</h5>
-                    <h5 className={styles.storeListItem}><span>Номер телефона:</span> {item.phoneNumber ?? "Немає"}</h5>
-                    <h5 className={styles.storeListItemLast}><span>Телеграм чат id:</span> {item.tgChatId ?? "Немає"}</h5>
+                <div key={index} className={styles.storesContainer}>
+                    <h4 className={styles.storesText}><span>№{++index}</span>&nbsp;&nbsp;{item.city} {item.address}</h4>
+                    <h5 className={styles.storesText}><span>Адміністратор:</span> {item.adminLogin ?? "Немає"}</h5>
+                    <h5 className={styles.storesText}><span>Номер телефона:</span> {item.phoneNumber ?? "Немає"}</h5>
+                    <h5 className={styles.storesText}><span>Телеграм чат id:</span> {item.tgChatId ?? "Немає"}</h5>
                 </div>))}
 
             <button type="submit" className={`${styles.submit} ${isSubmitting ? styles.loading : ""}`}>

@@ -21,7 +21,7 @@ const ChangeCityNameForm: FC<ICitiesFormProps> = ( { cities, showLoader, hideLoa
     const onSubmit: SubmitHandler<IChangeCityNameFrom> = async (data) => {
         showLoader();
         const isSuccess: boolean = await fetchChangeCityNameAsync(data);
-        if (!isSuccess)
+        if (isSuccess)
         {
             alert("Назву міста успішно змінено!");
             hideLoader();

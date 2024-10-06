@@ -9,6 +9,11 @@ export interface IStoresFormProps {
     hideLoader: () => void
 }
 
+export interface IStoresFormBaseProps {
+    showLoader: () => void, 
+    hideLoader: () => void
+}
+
 export interface ILoginRequestProps {
     data: ILoginForm, 
     setTitle: Dispatch<SetStateAction<string>>

@@ -23,6 +23,7 @@ import {
     IChangeCityNameFrom, 
     IChangePasswordForm, 
     IChangeProductFrom, 
+    IChangeStoreInfoBaseFrom, 
     IChangeStoreInfoFrom, 
     IRemoveAdminForm, 
     IRemoveCityForm, 
@@ -41,13 +42,16 @@ import {
     BlockCustomerReviews,
     ChangeAdminPassword,
     ChangeCityName,
+    ChangeDataStoreProductStatus,
     ChangePassword,
     ChangeProduct,
     ChangeStoreInfo,
+    ChangeStoreInfoBase,
     Cities,
     GetCustomerById,
     GetCustomerByPhoneNumber,
     GetProducts,
+    GetProductsWithStore,
     Login,
     Logout,
     ProductTypes,
@@ -317,6 +321,23 @@ export const fetchChangeCityNameAsync: (data: IChangeCityNameFrom) => Promise<bo
 export const fetchChangeStoreInfoAsync: (data: IChangeStoreInfoFrom) => Promise<boolean> = async (data) => {
     try {
         const response = await axios.post<IErrorResponse>(ChangeStoreInfo, data);
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return false;
+    }
+}
+
+export const fetchChangeStoreInfoBaseAsync: (data: IChangeStoreInfoBaseFrom) => Promise<boolean> = async (data) => {
+    try {
+        const response = await axios.post<IErrorResponse>(ChangeStoreInfoBase, data);
 
         if (response.data.status != undefined) {
             alert(response.data.message)
@@ -608,5 +629,46 @@ export const fetchTypeProductAsync: (data: ITypeProductFrom) => Promise<ITypePro
         console.error(error);
         alert(error);
         return { products: [], pageCount: 0, totalQuantity: 0 };
+    }
+}
+
+export const fetchTypeProductWithStoreIdAsync: (data: ITypeProductFrom) => Promise<ITypeProductData> = async (data) => {
+    try {
+        const response = await axios.get<ITypeProductResponse>(GetProductsWithStore, {
+            params: {
+                typeId: data.typeId,
+                page: data.page
+            }
+        });
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return { products: [], pageCount: 0, totalQuantity: 0 };
+        }
+        
+        return response.data.data;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return { products: [], pageCount: 0, totalQuantity: 0 };
+    }
+}
+
+export const fetchChangeDataStoreProductStatusAsync: (productId: string) => Promise<boolean> = async (productId) => {
+    try {
+        const response = await axios.get<IErrorResponse>(ChangeDataStoreProductStatus, {
+            params: { productId: productId }
+        });
+
+        if (response.data.status != undefined) {
+            alert(response.data.message)
+            return false;
+        }
+        
+        return true;
+    } catch (error) {
+        console.error(error);
+        alert(error);
+        return false; 
     }
 }

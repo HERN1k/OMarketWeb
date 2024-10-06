@@ -32,7 +32,6 @@ instance.interceptors.response.use(function (response) {
         }
         catch (refreshError) {
             localStorage.clear();
-            window.location.reload();
             window.location.href = LoginPage;
             return Promise.reject(refreshError);
         }
