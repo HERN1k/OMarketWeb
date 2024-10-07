@@ -1,5 +1,6 @@
 import axios from "axios";
 import { BaseURL, LoginPage, RefreshToken } from "./Constants";
+import { IErrorResponse } from "../types/Response.interface"
 
 const instance = axios.create({
     baseURL: BaseURL,
@@ -27,7 +28,7 @@ instance.interceptors.response.use(function (response) {
         
         try {
             await axios.get(`${BaseURL}${RefreshToken}`, { withCredentials: true } );
-            
+
             return instance(originalRequest);
         }
         catch (refreshError) {

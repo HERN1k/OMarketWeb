@@ -66,6 +66,19 @@ const AddNewProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, h
         }
     };
 
+    const validateFileSize: (fileList: FileList) => boolean = (fileList) => {
+        const file = fileList[0];
+        if (file) {
+            const fileSizeInMB = file.size / (1024 * 1024);
+            if (fileSizeInMB > 1) {
+                return false;
+            }
+            return true;
+        }
+
+        return true;
+    };
+
     const handleClose = () => setShowModal(false);
     const handleShow = () => setShowModal(true);
 
@@ -167,7 +180,7 @@ const AddNewProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, h
                     <div className={styles.error}>
                         {errors?.price && <span>{errors.price.message}</span>}
                     </div>
-                </div>
+                </div> 
 
                 <div className={styles.inputContainerNotRequired}>
                     <input placeholder=" " {...register("dimensions", { 
@@ -209,7 +222,9 @@ const AddNewProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, h
                             required: {
                                 value: true,
                                 message: "Це поле є обов'язковим"
-                            }})} /> 
+                            },
+                            validate: (value) => validateFileSize(value) || "Файл не повинен перевищувати 10 МБ."
+                            })} /> 
                     
                     <label htmlFor="fileLabel">{imageButton}</label>
                     

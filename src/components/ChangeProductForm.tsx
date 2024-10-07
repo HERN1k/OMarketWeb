@@ -51,6 +51,19 @@ const ChangeProductForm: FC<IProductsFormProps> = ({ showLoader, hideLoader}) =>
         }
     };
 
+    const validateFileSize: (fileList: FileList) => boolean = (fileList) => {
+        const file = fileList[0];
+        if (file) {
+            const fileSizeInMB = file.size / (1024 * 1024);
+            if (fileSizeInMB > 1) {
+                return false;
+            }
+            return true;
+        }
+
+        return true;
+    };
+
     const handleClose = () => setShowModal(false);
     const handleShow = () => setShowModal(true);
 
@@ -75,7 +88,7 @@ const ChangeProductForm: FC<IProductsFormProps> = ({ showLoader, hideLoader}) =>
 
                     <div className={styles.error}>
                         {errors?.productId && <span>{errors.productId.message}</span>}
-                    </div>
+                    </div> 
                 </div>
 
                 <div className={styles.inputContainerNotRequired}>
@@ -148,7 +161,9 @@ const ChangeProductForm: FC<IProductsFormProps> = ({ showLoader, hideLoader}) =>
                         id="fileChangeLabel"
                         accept=".jpg, .jpeg, .png, .webp"
                         onInput={handleFileChange}
-                        {...register("file")} /> 
+                        {...register("file", {
+                            validate: (value) => validateFileSize(value) || "Файл не повинен перевищувати 10 МБ."
+                        })} /> 
                     
                     <label htmlFor="fileChangeLabel">{imageButton}</label>
                     
