@@ -29,7 +29,7 @@ const App: FC = () => {
             </div>
 
             <div className={styles.footer}>
-                <Link className={styles.linkItem} to={"reference"}>⮩ Довідка ⮨</Link>
+                <Link className={styles.linkItem} to={"reference"}>Довідка</Link>
                 <p className={styles.createdBy}>© Created by HERN1k</p>
             </div>
         </> 

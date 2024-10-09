@@ -134,7 +134,7 @@ const ChangeDataStoreProducts: FC<IProductsFormProps> = ({ productTypes, showLoa
                 </div>))}
 
             <div className={styles.pagination}>
-                <button className={styles.submit} onClick={fetchProductsRefresh}>⭮</button> 
+                <button className={styles.submit} onClick={fetchProductsRefresh}>🔄</button>  
 
                 <button className={`${styles.submit} ${currentPage === 1 ? styles.disabled : ""}`} 
                     onClick={handlePreviousPage} 
