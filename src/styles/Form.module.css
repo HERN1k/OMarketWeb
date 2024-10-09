@@ -305,6 +305,7 @@
     border-radius: 8px;
     margin-top: 1rem;
     transition: transform 0.2s;
+	overflow: hidden;
 }
 
 .productPreview {

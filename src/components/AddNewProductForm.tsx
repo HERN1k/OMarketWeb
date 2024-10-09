@@ -70,7 +70,7 @@ const AddNewProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, h
         const file = fileList[0];
         if (file) {
             const fileSizeInMB = file.size / (1024 * 1024);
-            if (fileSizeInMB > 1) {
+            if (fileSizeInMB > 5) {
                 return false;
             }
             return true;
@@ -223,7 +223,7 @@ const AddNewProductForm: FC<IProductsFormProps> = ({ productTypes, showLoader, h
                                 value: true,
                                 message: "Це поле є обов'язковим"
                             },
-                            validate: (value) => validateFileSize(value) || "Файл не повинен перевищувати 10 МБ."
+                            validate: (value) => validateFileSize(value) || "Файл не повинен перевищувати 5 МБ."
                             })} /> 
                     
                     <label htmlFor="fileLabel">{imageButton}</label>

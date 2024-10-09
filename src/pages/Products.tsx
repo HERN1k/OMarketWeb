@@ -39,7 +39,7 @@ const Products: FC = () => {
             <FindProductForm productTypes={productTypes} 
                             showLoader={showLoader} 
                             hideLoader={hideLoader}/>
-            <AddNewProductForm productTypes={productTypes} 
+            <AddNewProductForm productTypes={productTypes}  
                             showLoader={showLoader} 
                             hideLoader={hideLoader}/>
             <ChangeProductForm productTypes={productTypes} 

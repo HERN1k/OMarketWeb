@@ -55,7 +55,7 @@ const ChangeProductForm: FC<IProductsFormProps> = ({ showLoader, hideLoader}) =>
         const file = fileList[0];
         if (file) {
             const fileSizeInMB = file.size / (1024 * 1024);
-            if (fileSizeInMB > 1) {
+            if (fileSizeInMB > 5) {
                 return false;
             }
             return true;
@@ -162,7 +162,7 @@ const ChangeProductForm: FC<IProductsFormProps> = ({ showLoader, hideLoader}) =>
                         accept=".jpg, .jpeg, .png, .webp"
                         onInput={handleFileChange}
                         {...register("file", {
-                            validate: (value) => validateFileSize(value) || "Файл не повинен перевищувати 10 МБ."
+                            validate: (value) => validateFileSize(value) || "Файл не повинен перевищувати 5 МБ."
                         })} /> 
                     
                     <label htmlFor="fileChangeLabel">{imageButton}</label>
